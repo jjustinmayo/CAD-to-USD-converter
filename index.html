@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>USD/CAD Converter</h1>
+    <!-- Title -->
+
+    <label>CAD: </label> 
+    <!-- label will always go right beside the next line, regardless of if its inside or not-->
+    
+    <input type="number" id="CAD amount" placeholder="Enter CAD amount">  
+    <!-- input field that requires a number value, assigned an ID, and placeholder inside-->
+    
+    <br>
+
+    <button type=button onclick="multiply()">Convert to USD</button>  
+    <!-- type=button is mandatory, we make an onclick element which JS  will use later, and name the button -->
+    
+    <br> 
+    <p id="USD amount"></p> 
+    <!-- we want this paragraph to print the value of the function -->
+
+<script>
+    
+    function multiply() {
+        let CAD = document.getElementById("CAD amount").value;   
+        // create variable for the CAD amount user inputs, 
+        // document.getElementByID("CAD amount") RETURNS the element "CAD amount" which is what the user inputs
+        // if its a number, gotta put .value or else it runs NaN
+
+        document.getElementById("USD amount").innerHTML = CAD * .75;
+        // within the same function, this returns the product of CAD * .75 in the <p> line identified as "USD amount"
+    }
+
+
+</script>
+</body>
+</html>
